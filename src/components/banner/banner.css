@@ -8,11 +8,13 @@
     background: #000;
     opacity: 0.4;
 }
+
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -27,6 +29,15 @@
 .opacity-0 {
     opacity: 0;
 }
-.btns-slider button{
+
+.btns-slider button {
     background-color: #ffffff58;
+}
+
+@media only screen and (max-width: 768px) {
+    .Bookingform {
+        margin: 20px 0;
+        box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 15%);
+        border-radius: 10px;
+    }
 }

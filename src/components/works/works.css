@@ -1,0 +1,15 @@
+.work{
+    background-image: url(/images/tabbg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.botton-nav.bg-opacity-70 .this-dot {
+    border-color: #E95440 !important;
+}
+.botton-nav.bg-opacity-70 .this-line{
+    background-color: #E95440 !important;
+} 
+.custom-dots .botton-nav:last-child .this-line {
+    display: none;
+}

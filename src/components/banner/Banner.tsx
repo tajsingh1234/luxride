@@ -5,6 +5,7 @@ import { GoArrowRight } from "react-icons/go";
 import { GoArrowLeft } from "react-icons/go";
 import Slider from "react-slick";
 import './banner.css';
+import Bookingform from "./Bookingform";
 
 interface BannerProps {
     backgroundImage: string;
@@ -20,7 +21,7 @@ const TopBanner: React.FC<BannerProps & { isActive: boolean }> = ({
 }) => (
     <div>
         <div
-            className="banner relative px-8 pb-[60px] flex align-center pb-0 md:h-screen pt-[220px] bg-cover"
+            className="banner relative px-4 pb-[60px] flex align-center pb-0 h-[510px] md:h-[130vh] pt-[250px] md:pt-[330px] bg-cover"
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
             <div className="container relative z-10 text-white">
@@ -40,12 +41,12 @@ const Banner: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const sliderRef = useRef<Slider>(null);
     const settings = {
-        dots: false,                // Show navigation dots
-        infinite: true,             // Loop slides
-        speed: 500,                 // Transition speed in ms
-        slidesToShow: 1,            // Number of slides visible
-        slidesToScroll: 1,          // Number of slides to scroll at a time
-        autoplay: true,             // Enable autoplay
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
         autoplaySpeed: 3000,
         pauseOnHover: false,
         pauseOnFocus: false,
@@ -53,16 +54,16 @@ const Banner: React.FC = () => {
         beforeChange: (oldIndex: number, newIndex: number) => {
             setCurrentSlide(newIndex);
         },
-        responsive: [               // Responsive breakpoints
+        responsive: [
             {
-                breakpoint: 768,    // Mobile devices
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 },
             },
             {
-                breakpoint: 1024,   // Tablets
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -90,7 +91,7 @@ const Banner: React.FC = () => {
     ];
 
     return (
-        <div className="overflow-hidden">
+        <div className="overflow-hidden relative">
 
             <Slider ref={sliderRef} {...settings}>
                 {banners.map((banner, index) => (
@@ -104,27 +105,31 @@ const Banner: React.FC = () => {
                 ))}
             </Slider>
            
-                <div className="absolute container px-8 md:px-0  pt-[130px]  top-1 left-0 right-0 flex items-center  gap-4">
-                    <div className="btns-slider flex">
-                        <button
-                            className="w-[40px] h-[40px] me-2 rounded-full text-white flex items-center justify-center rounded shadow "
-                            onClick={() => sliderRef.current?.slickPrev()}
-                        >
-                            <GoArrowLeft />
-                        </button>
-                        <button
-                            className=" w-[40px] h-[40px] rounded-full text-white flex items-center justify-center rounded shadow "
-                            onClick={() => sliderRef.current?.slickNext()}
-                        >
-                            <GoArrowRight />
-                        </button>
-                    </div>
-                    <p className="text-white block">
-                        <strong>{currentSlide + 1} </strong> / {banners.length}
-                    </p>
+
+            <div className="absolute container px-4 md:px-0  pt-[180px] md:pt-[240px]  top-1 left-0 right-0 flex items-center  gap-4">
+                <div className="btns-slider flex">
+                    <button
+                        className="w-[40px] h-[40px] me-2 rounded-full text-white flex items-center justify-center rounded shadow "
+                        onClick={() => sliderRef.current?.slickPrev()}
+                    >
+                        <GoArrowLeft />
+                    </button>
+                    <button
+                        className=" w-[40px] h-[40px] rounded-full text-white flex items-center justify-center rounded shadow "
+                        onClick={() => sliderRef.current?.slickNext()}
+                    >
+                        <GoArrowRight />
+                    </button>
                 </div>
+                <p className="text-white block">
+                    <strong>{currentSlide + 1} </strong> / {banners.length}
+                </p>
             </div>
-      
+            <div className=" md:absolute px-4 container bottom-10 left-0 right-0 w-full">
+                <Bookingform />
+            </div>
+        </div>
+
     );
 };
 

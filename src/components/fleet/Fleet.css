@@ -1,0 +1,14 @@
+.scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-hidden {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  /* .fleet-main{
+background-image: url(/images/bg-our-fleet.png);
+background-position: left top;
+background-repeat: no-repeat;
+background-size: contain 200px; 
+  }
+    */
