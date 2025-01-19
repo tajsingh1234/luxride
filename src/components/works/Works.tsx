@@ -57,13 +57,11 @@ const Works = () => {
     ];
 
     return (
-        <div className="work text-white bg-dark py-14 md:py-32 px-4">
+        <div className="work text-white bg-dark mt-[-120px] relative z-20  px-4">
             <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
-                    <div className="work-text">
+                <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-10">
+                    <div className="work-text col-span-5 flex flex-col justify-center">
                         <h2 className="mb-5">How It Works</h2>
-
-
                         <div className="custom-dots  gap-2 mt-4">
                             {dotTexts.map((dot, index) => (
                                 <button
@@ -88,11 +86,11 @@ const Works = () => {
                         </div>
                     </div>
 
-                    <div className="img-slider">
+                    <div className="img-slider col-span-7">
                         <Slider ref={sliderRef} {...settings}>
                             {fleetData.map((fleet) => (
                                 <div key={fleet.id}>
-                                    <img src={fleet.image} className="w-full" alt={fleet.name} />
+                                    <img src={fleet.image} className="w-full top-move" alt={fleet.name} />
                                 </div>
                             ))}
                         </Slider>

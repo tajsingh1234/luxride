@@ -2,6 +2,7 @@
     background-image: url(/images/tabbg.png);
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .botton-nav.bg-opacity-70 .this-dot {
@@ -12,4 +13,38 @@
 } 
 .custom-dots .botton-nav:last-child .this-line {
     display: none;
+}
+.work .img-slider .slick-slider {
+    margin-right: -21rem;
+}
+.work .slick-slide:nth-child(3) img {
+    width: 70%;
+}
+.work .slick-track {
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 1300px) {
+    .img-slider .slick-slider {
+        margin-right: -5rem !important;
+    }
+
+    .work .slick-slide:nth-child(3) img {
+        width: 80%;
+    }
+    .work{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+@media only screen and (max-width: 786px) {
+ 
+
+    .work .slick-slide:nth-child(3) img {
+        width: 80%;
+    }
+    .work{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 }

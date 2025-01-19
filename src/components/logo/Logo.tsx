@@ -5,34 +5,33 @@ import Slider from "react-slick";
 
 
 const Logo2 = () => {
-  // Slick slider settings
   const settings = {
-    dots: false, // Hide navigation dots
-    infinite: true, // Enable infinite looping
-    speed: 500, // Transition speed in ms
-    slidesToShow: 4, // Show 4 slides at once on larger screens
-    slidesToScroll: 1, // Scroll 1 slide at a time
-    autoplay: true, // Enable autoplay
-    autoplaySpeed: 2000, // Autoplay delay (2 seconds)
+    dots: false, 
+    infinite: true, 
+    speed: 500, 
+    slidesToShow: 4, 
+    slidesToScroll: 1, 
+    autoplay: true, 
+    autoplaySpeed: 2000, 
     responsive: [
       {
-        breakpoint: 1024, // For medium screens (tablets)
+        breakpoint: 1024, 
         settings: {
-          slidesToShow: 3, // Show 3 slides at once
+          slidesToShow: 3, 
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 768, // For small screens (mobile)
+        breakpoint: 768, 
         settings: {
-          slidesToShow: 2, // Show 2 slides at once
+          slidesToShow: 2, 
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 480, // For extra small screens (mobile portrait)
+        breakpoint: 480, 
         settings: {
-          slidesToShow: 2, // Show 1 slide at once
+          slidesToShow: 2, 
           slidesToScroll: 1,
         },
       },

@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import CardFleet from "./CardFleet"; // Import your CardFleet component
 import './Fleet.css'
+
 const fleetData = [
   {
     id: 1,
@@ -15,44 +16,93 @@ const fleetData = [
   },
   {
     id: 2,
-    name: "Electric Class",
-    description: "Mercedes-Benz EQS, BMW 7 Series, Audi A8 or similar",
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
     image: "/images/fleet-car1.png",
-    passengers: 5,
-    luggage: 4,
+    passengers: 4,
+    luggage: 3,
   },
   {
     id: 3,
-    name: "Luxury Class",
-    description: "Mercedes-Benz E-Class, BMW 5 Series, Cadillac XTS or similar",
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
     image: "/images/fleet-car1.png",
     passengers: 4,
-    luggage: 2,
+    luggage: 3,
   },
   {
     id: 4,
-    name: "Luxury Class",
-    description: "Mercedes-Benz E-Class, BMW 5 Series, Cadillac XTS or similar",
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
     image: "/images/fleet-car1.png",
     passengers: 4,
-    luggage: 2,
+    luggage: 3,
   },
   {
     id: 5,
-    name: "Luxury Class",
-    description: "Mercedes-Benz E-Class, BMW 5 Series, Cadillac XTS or similar",
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
     image: "/images/fleet-car1.png",
     passengers: 4,
-    luggage: 2,
+    luggage: 3,
   },
   {
     id: 6,
-    name: "Luxury Class",
-    description: "Mercedes-Benz E-Class, BMW 5 Series, Cadillac XTS or similar",
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
     image: "/images/fleet-car1.png",
     passengers: 4,
-    luggage: 2,
+    luggage: 3,
   },
+  {
+    id: 7,
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
+    image: "/images/fleet-car1.png",
+    passengers: 4,
+    luggage: 3,
+  },
+  {
+    id: 8,
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
+    image: "/images/fleet-car1.png",
+    passengers: 4,
+    luggage: 3,
+  },
+  {
+    id: 9,
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
+    image: "/images/fleet-car1.png",
+    passengers: 4,
+    luggage: 3,
+  },
+  {
+    id: 10,
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
+    image: "/images/fleet-car1.png",
+    passengers: 4,
+    luggage: 3,
+  },
+  {
+    id: 11,
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
+    image: "/images/fleet-car1.png",
+    passengers: 4,
+    luggage: 3,
+  },
+  {
+    id: 12,
+    name: "Audi Q3 Sportback",
+    description: "Mercedes-Benz V-Class, Chevrolet Suburban, Cadillac",
+    image: "/images/fleet-car1.png",
+    passengers: 4,
+    luggage: 3,
+  },
+  // Add other fleet data here
 ];
 
 const Fleet = () => {
@@ -86,18 +136,30 @@ const Fleet = () => {
 
   return (
     <div ref={sectionRef} className="relative fleet-main pt-20 h-[200vh]">
-      <div className="fleet sticky top-20 h-screen px-4 ">
+      <div className="fleet sticky top-40 h-screen px-4 ">
         <div className="container">
-          <div className="flex mb-10 justify-between">
+          <div className="flex relative z-10 mb-10 justify-between">
             <h2>Our Fleet</h2>
             <a href="#" className="font-semibold w-fit flex gap-2 items-center">
               <span>More Fleet</span> <FiArrowUpRight />
             </a>
           </div>
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-3 overflow-hidden h-full ps-2"
-          >
+        </div>
+        
+        <div className="slider-over">
+          <div className="start"></div>
+          <div className="center"></div>
+          <div className="end"></div>
+        </div>
+
+        <div
+          ref={scrollContainerRef}
+          className="flex gap-3 overflow-hidden  ps-2 transition-all duration-500 ease-in-out"
+          style={{
+            transition: "all 1s ease-in-out", // Smooth transition effect
+          }}
+        >
+          <div className="container flex gap-3 ">
             {fleetData.map((fleet) => (
               <CardFleet
                 key={fleet.id}

@@ -20,7 +20,7 @@ const CardFleet: React.FC<CardFleetProps> = ({
         <div className="card-fleet w-[354px] bg-white flex-none mx-2 p-6 border rounded-md border-gray">
             <h4>{name}</h4>
             <p className="body-text-small my-3">{description}</p>
-            <img src={image} alt={name} />
+            <img src={image} alt={name} className="top-move" />
             <div className="flex mt-6 justify-between">
                 <div className="iconbox flex gap-3 items-center">
                     <div className="icon rounded-full bg-[#F6F6F6] w-[40px] h-[40px] flex items-center justify-center">

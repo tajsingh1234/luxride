@@ -21,7 +21,7 @@ const TopBanner: React.FC<BannerProps & { isActive: boolean }> = ({
 }) => (
     <div>
         <div
-            className="banner relative px-4 pb-[60px] flex align-center pb-0 h-[510px] md:h-[130vh] pt-[250px] md:pt-[330px] bg-cover"
+            className="banner relative px-4 pb-[60px] flex align-center pb-0 bg-cover bg-center h-[400px] xl:h-[100vh] md:h-[120vh]  pt-[300px] md:pt-[300px] bg-cover"
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
             <div className="container relative z-10 text-white">
@@ -104,9 +104,9 @@ const Banner: React.FC = () => {
                     />
                 ))}
             </Slider>
-           
 
-            <div className="absolute container px-4 md:px-0  pt-[180px] md:pt-[240px]  top-1 left-0 right-0 flex items-center  gap-4">
+
+            <div className="absolute container px-4 md:px-0  pt-[230px] md:pt-[240px]  top-1 left-0 right-0 flex items-center  gap-4">
                 <div className="btns-slider flex">
                     <button
                         className="w-[40px] h-[40px] me-2 rounded-full text-white flex items-center justify-center rounded shadow "
