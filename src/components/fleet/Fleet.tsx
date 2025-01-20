@@ -2,8 +2,10 @@
 
 import React, { useEffect, useRef } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import CardFleet from "./CardFleet"; // Import your CardFleet component
+import CardFleet from "./CardFleet";
+import Slider from "react-slick";
 import './Fleet.css'
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 const fleetData = [
   {
@@ -109,6 +111,19 @@ const Fleet = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
+  const sliderRef = useRef<Slider>(null);
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 3000,
+    
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const section = sectionRef.current;
@@ -135,45 +150,85 @@ const Fleet = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative fleet-main pt-20 h-[200vh]">
-      <div className="fleet sticky top-40 h-screen px-4 ">
-        <div className="container">
-          <div className="flex relative z-10 mb-10 justify-between">
-            <h2>Our Fleet</h2>
-            <a href="#" className="font-semibold w-fit flex gap-2 items-center">
-              <span>More Fleet</span> <FiArrowUpRight />
-            </a>
-          </div>
-        </div>
-        
-        <div className="slider-over">
-          <div className="start"></div>
-          <div className="center"></div>
-          <div className="end"></div>
-        </div>
+    <>
 
-        <div
-          ref={scrollContainerRef}
-          className="flex gap-3 overflow-hidden  ps-2 transition-all duration-500 ease-in-out"
-          style={{
-            transition: "all 1s ease-in-out", // Smooth transition effect
-          }}
-        >
-          <div className="container flex gap-3 ">
-            {fleetData.map((fleet) => (
-              <CardFleet
-                key={fleet.id}
-                name={fleet.name}
-                description={fleet.description}
-                image={fleet.image}
-                passengers={fleet.passengers}
-                luggage={fleet.luggage}
-              />
-            ))}
+      <div ref={sectionRef} className="relative md:block hidden  fleet-main pt-20 h-[200vh]">
+        <div className="fleet sticky top-40 h-screen px-4 ">
+          <div className="container">
+            <div className="flex relative z-10 mb-10 justify-between">
+              <h2>Our Fleet</h2>
+              <a href="#" className="font-semibold w-fit flex gap-2 items-center">
+                <span>More Fleet</span> <FiArrowUpRight />
+              </a>
+            </div>
+          </div>
+
+          <div className="slider-over">
+            <div className="start"></div>
+            <div className="center"></div>
+            <div className="end"></div>
+          </div>
+
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-3 overflow-hidden  ps-2 transition-all duration-500 ease-in-out"
+            style={{
+              transition: "all 1s ease-in-out", // Smooth transition effect
+            }}
+          >
+            <div className="container flex gap-3 ">
+              {fleetData.map((fleet) => (
+                <CardFleet
+                  key={fleet.id}
+                  name={fleet.name}
+                  description={fleet.description}
+                  image={fleet.image}
+                  passengers={fleet.passengers}
+                  luggage={fleet.luggage}
+                />
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div className="md:hidden py-10 px-4 block">
+        <div className="flex relative z-10 mb-10 justify-between">
+          <h2>Our Fleet</h2>
+          <a href="#" className="font-semibold w-fit flex gap-2 items-center">
+            <span>More Fleet</span> <FiArrowUpRight />
+          </a>
+        </div>
+        <div className="">
+        <Slider ref={sliderRef} {...sliderSettings} className="services-slider">
+          {fleetData.map((fleet) => (
+            <CardFleet
+              key={fleet.id}
+              name={fleet.name}
+              description={fleet.description}
+              image={fleet.image}
+              passengers={fleet.passengers}
+              luggage={fleet.luggage}
+            />
+          ))}
+          </Slider>
+          <div className="mt-10 relative z-10 services-btn flex">
+            <button
+              className="w-[50px] h-[50px] me-2 border border-gray rounded-full text-white flex items-center justify-center   "
+              onClick={() => sliderRef.current?.slickPrev()}
+            >
+              <GoArrowLeft className="text-dark" />
+            </button>
+            <button
+              className=" w-[50px] h-[50px] rounded-full hover:orange text-white border border-gray flex items-center justify-center rounded  "
+              onClick={() => sliderRef.current?.slickNext()}
+            >
+              <GoArrowRight className="text-dark" />
+            </button>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

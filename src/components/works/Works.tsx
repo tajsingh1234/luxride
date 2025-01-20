@@ -57,7 +57,7 @@ const Works = () => {
     ];
 
     return (
-        <div className="work text-white bg-dark mt-[-120px] relative z-20  px-4">
+        <div className="work text-white bg-dark md:mt-[-120px] mt-0 relative z-20  px-4">
             <div className="container">
                 <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-10">
                     <div className="work-text col-span-5 flex flex-col justify-center">

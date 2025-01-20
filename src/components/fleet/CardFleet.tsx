@@ -17,7 +17,7 @@ const CardFleet: React.FC<CardFleetProps> = ({
     luggage,
 }) => {
     return (
-        <div className="card-fleet w-[354px] bg-white flex-none mx-2 p-6 border rounded-md border-gray">
+        <div className="card-fleet w-full md:w-[354px] bg-white flex-none mx-0 md:mx-2 p-6 border rounded-md border-gray">
             <h4>{name}</h4>
             <p className="body-text-small my-3">{description}</p>
             <img src={image} alt={name} className="top-move" />
