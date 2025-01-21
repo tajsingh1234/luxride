@@ -16,7 +16,7 @@ const Header = () => {
     };
 
     return (
-        <div  className="header py-3 bg-dark fixed top-0 w-full z-50 text-dark md:text-white">
+        <div  className="header py-0 bg-dark fixed top-0 w-full z-50 text-dark md:text-white">
             <header>
                 <nav className="container flex  items-center justify-between p-4 " aria-label="Global">
                     <div className="flex lg:flex-1">
