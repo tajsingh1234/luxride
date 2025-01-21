@@ -31,7 +31,7 @@ const Maketrip = () => {
 
   return (
     <div className="maketrip py-16 md:py-20 px-4">
-      <div className="container">
+      <div data-aos="fade-up"  className="container">
         <h2 className="text-center mb-8 md:mb-12">Make Your Trip Your Way With Us</h2>
         <div className="grid gap-10 md:grid-cols-3 grid-cols-1">
           {maketripData.map((item) => (

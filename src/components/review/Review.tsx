@@ -50,7 +50,7 @@ const Review = () => {
   };
   return (
     <div className="review bg-dark text-white py-20 px-4">
-      <div className="container">
+      <div className="container" data-aos="fade-up" >
         <div className="grid items-center grid-cols-2">
           <div className="md:col-span-1 col-span-12">
             <Slider {...sliderSettings} className="cursor-grabbing">

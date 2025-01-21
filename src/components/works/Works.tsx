@@ -57,10 +57,10 @@ const Works = () => {
     ];
 
     return (
-        <div className="work text-white bg-dark md:mt-[-120px] mt-0 relative z-20  px-4">
+        <div  className="work  text-white bg-dark md:mt-[-120px] mt-0 relative z-20  px-4">
             <div className="container">
-                <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-10">
-                    <div className="work-text col-span-5 flex flex-col justify-center">
+                <div data-aos="fade-up" className="md:grid md:grid-cols-12 grid-cols-1 items-center gap-10">
+                    <div className="work-text md:col-span-5 col-span-5 flex flex-col justify-center">
                         <h2 className="mb-5">How It Works</h2>
                         <div className="custom-dots  gap-2 mt-4">
                             {dotTexts.map((dot, index) => (

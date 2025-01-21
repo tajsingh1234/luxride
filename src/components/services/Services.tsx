@@ -66,9 +66,9 @@ const Services = () => {
     };
 
     return (
-        <div className="services relative overflow-hidden  py-14 px-4">
+        <div className="services  relative overflow-hidden  py-14 px-4">
             <div className="container">
-                <div className="flex relative z-10 mb-10 justify-between">
+                <div data-aos="fade-up"  className="flex relative z-10 mb-10 justify-between">
                     <h2>Our Services</h2>
                     <a href="#" className="font-semibold w-fit flex gap-2 items-center">
                         <span>More Fleet</span> <FiArrowUpRight />
@@ -79,7 +79,8 @@ const Services = () => {
                     <div className="center"></div>
                     <div className="end"> </div>
                 </div>
-                <Slider ref={sliderRef} {...sliderSettings} className="services-slider">
+                <div data-aos="fade-up" >
+                <Slider  ref={sliderRef} {...sliderSettings} className="services-slider">
                     {servicesData.map((service) => (
                         <div key={service.id} className="px-2">
                             <ServicesCard
@@ -90,6 +91,7 @@ const Services = () => {
                         </div>
                     ))}
                 </Slider>
+                </div>
                 <div className="mt-10 relative z-10 services-btn flex">
                     <button
                         className="w-[50px] h-[50px] me-2 border border-gray rounded-full text-white flex items-center justify-center   "

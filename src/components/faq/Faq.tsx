@@ -61,7 +61,7 @@ const Faq: React.FC = () => {
 
     return (
         <div className="faq  px-4 py-14 md:py-28">
-            <div className="max-w-[780px] mx-auto ">
+            <div className="max-w-[780px] mx-auto " data-aos="fade-up">
                 <h2 className="mb-10 text-center">Frequently Asked Questions  </h2>
                 <div className="faq-list grid ">
                     {faqData.map((faq, index) => (

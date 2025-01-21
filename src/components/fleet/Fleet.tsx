@@ -121,7 +121,7 @@ const Fleet = () => {
     autoplay: true,
     arrows: false,
     autoplaySpeed: 3000,
-    
+
   };
 
   useEffect(() => {
@@ -150,46 +150,51 @@ const Fleet = () => {
   }, []);
 
   return (
-    <>
+    <div className="" >
 
-      <div ref={sectionRef} className="relative md:block hidden  fleet-main pt-20 h-[200vh]">
-        <div className="fleet sticky top-40 h-screen px-4 ">
-          <div className="container">
-            <div className="flex relative z-10 mb-10 justify-between">
-              <h2>Our Fleet</h2>
-              <a href="#" className="font-semibold w-fit flex gap-2 items-center">
-                <span>More Fleet</span> <FiArrowUpRight />
-              </a>
+      <div ref={sectionRef} className=" md:block hidden fleet-main pt-20 ">
+        <div className="h-[200vh] relative">
+          <div className="fleet sticky top-40 h-screen px-4 ">
+            <div className=" container">
+              <div data-aos="fade-up"  className="flex  mb-12 relative z-10 mb-10 justify-between">
+                <h2>Our Fleet</h2>
+                <a href="#" className="font-semibold w-fit flex gap-2 items-center">
+                  <span>More Fleet</span> <FiArrowUpRight />
+                </a>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="slider-over">
+                <div className="start"></div>
+                <div className="center"></div>
+                <div className="end"></div>
+              </div>
+              <div className="overflow-hidden" ref={scrollContainerRef}>
+                <div
+
+                  className="flex gap-3  container  ps-2 transition-all duration-500 ease-in-out"
+                  style={{
+                    transition: "all 1s ease-in-out", // Smooth transition effect
+                  }}
+                >
+                  <div data-aos="fade-up"  className="relative flex gap-3 ">
+
+                    {fleetData.map((fleet) => (
+                      <CardFleet
+                        key={fleet.id}
+                        name={fleet.name}
+                        description={fleet.description}
+                        image={fleet.image}
+                        passengers={fleet.passengers}
+                        luggage={fleet.luggage}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div className="slider-over">
-            <div className="start"></div>
-            <div className="center"></div>
-            <div className="end"></div>
-          </div>
-
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-3 overflow-hidden  ps-2 transition-all duration-500 ease-in-out"
-            style={{
-              transition: "all 1s ease-in-out", // Smooth transition effect
-            }}
-          >
-            <div className="container flex gap-3 ">
-              {fleetData.map((fleet) => (
-                <CardFleet
-                  key={fleet.id}
-                  name={fleet.name}
-                  description={fleet.description}
-                  image={fleet.image}
-                  passengers={fleet.passengers}
-                  luggage={fleet.luggage}
-                />
-              ))}
-            </div>
-          </div>
-
         </div>
       </div>
       <div className="md:hidden py-10 px-4 block">
@@ -200,19 +205,19 @@ const Fleet = () => {
           </a>
         </div>
         <div className="">
-        <Slider ref={sliderRef} {...sliderSettings} className="services-slider">
-          {fleetData.map((fleet) => (
-            <CardFleet
-              key={fleet.id}
-              name={fleet.name}
-              description={fleet.description}
-              image={fleet.image}
-              passengers={fleet.passengers}
-              luggage={fleet.luggage}
-            />
-          ))}
+          <Slider ref={sliderRef} {...sliderSettings} className="services-slider">
+            {fleetData.map((fleet) => (
+              <CardFleet
+                key={fleet.id}
+                name={fleet.name}
+                description={fleet.description}
+                image={fleet.image}
+                passengers={fleet.passengers}
+                luggage={fleet.luggage}
+              />
+            ))}
           </Slider>
-          <div className="mt-10 relative z-10 services-btn flex">
+          <div className="mt-10 relative z-10 services-btn justify-end flex">
             <button
               className="w-[50px] h-[50px] me-2 border border-gray rounded-full text-white flex items-center justify-center   "
               onClick={() => sliderRef.current?.slickPrev()}
@@ -228,7 +233,7 @@ const Fleet = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

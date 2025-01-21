@@ -20,7 +20,7 @@ const Bookingform = () => {
                     <div className='icon rounded-full bg-[#F6F6F6] w-[50px] h-[50px] flex items-center justify-center'>
                         <CiCalendarDate className='text-[#626262]' />
                     </div>
-                    <div className=''>
+                    <div className=' md:w-auto w-[80%]'>
                         <p className='font-semibold'>Date</p>
                         <input type="date"  className='w-full text-[#626262] focus:outline-none border-none bg-white' />
                     </div>

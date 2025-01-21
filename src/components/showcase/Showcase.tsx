@@ -56,7 +56,7 @@ const Counter = ({ target, duration }: { target: number; duration: number }) => 
 
 const Showcase = () => {
     return (
-        <div className="showcase py-10 px-4 md:px-10" >
+        <div data-aos="fade-up" className="showcase py-10 px-4 md:px-10" >
             <div className="showcase-main py-12 px-4 text-white bg-orange bg-cover bg-center rounded-md" style={{backgroundImage:"url(/images/bg-showcase.png)"}}>
                 <div className="container">
                     <div className="grid grid-cols-12 items-center">

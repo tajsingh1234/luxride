@@ -1,3 +1,4 @@
+"use client"
 import Banner from "@/components/banner/Banner";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,10 +14,17 @@ import Region from "@/components/region/Region";
 import News from "@/components/news/News";
 import Faq from "@/components/faq/Faq";
 import Footer from "@/footer/Footer";
-
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 export default function Home() {
-  
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+    })
+  }, [])
   return (
     <>
       <Header />

@@ -65,15 +65,15 @@ const News = () => {
 
     return (
         <div className="News py-20 bg-dark px-4">
-            <div className="container">
-                <div className="flex text-white relative z-10 mb-10 justify-between">
+            <div className="container" >
+                <div data-aos="fade-up"  className="flex text-white relative z-10 mb-10 justify-between">
                     <h2>Latest From News</h2>
                     <a href="#" className="font-semibold w-fit flex gap-2 items-center">
                         <span>More Fleet</span> <FiArrowUpRight />
                     </a>
                 </div>
 
-                <div className="news-latest grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div data-aos="fade-up"  className="news-latest grid grid-cols-1 md:grid-cols-3 gap-8">
                     {Newsdata.slice(0, visibleCount).map((NewsD) => (
                         <Newsbox
                             key={NewsD.id}

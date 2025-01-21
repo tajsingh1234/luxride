@@ -5,6 +5,12 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+  .fleet{
+    background-image: url(https://luxride.themepanthers.com/lux/wp-content/uploads/2024/04/bg-our-fleet.png);
+    background-position: 0px 80px;
+    background-repeat: no-repeat;
+    background-size: 39% auto;
+  }
 
 @media only screen and (max-width: 1200px) {
 

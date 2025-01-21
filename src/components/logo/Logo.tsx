@@ -39,11 +39,11 @@ const Logo2 = () => {
   };
 
   return (
-    <div className="logo overflow-hidden py-10 px-4 border-b border-[#ccc]">
+    <div data-aos="fade-up" className="logo overflow-hidden py-10 px-4 border-b border-[#ccc]">
       <div className="container">
         <div className="grid items-center md:grid-cols-12">
           <div className="md:col-span-4 col-span-12 mb-10 md:mb-0">
-            <h4 className="max-w-[330px] text-center md:text-start">The partners who sell our products</h4>
+            <h4 className="max-w-[330px] text-[24px] text-center md:text-start">The partners who sell our products</h4>
           </div>
           <div className="col-span-12 overflow-hidden md:col-span-8">
            

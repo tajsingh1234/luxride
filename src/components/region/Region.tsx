@@ -27,7 +27,7 @@ const Region: React.FC = () => {
 
     return (
         <div className="region py-20 px-4">
-            <div className="container">
+            <div className="container" data-aos="fade-up" >
                 <div className="grid items-center gap-10 grid-cols-1 md:grid-cols-2">
                     <div
                         className={`region-images flex gap-4 transition-transform duration-500 `}
