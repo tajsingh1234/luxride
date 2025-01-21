@@ -43,7 +43,7 @@ const Banner: React.FC = () => {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 500,
+        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
@@ -91,7 +91,7 @@ const Banner: React.FC = () => {
     ];
 
     return (
-        <div className="overflow-hidden relative">
+        <div className="overflow-hidden bg-dark relative">
 
             <Slider ref={sliderRef} {...settings}>
                 {banners.map((banner, index) => (
@@ -125,7 +125,7 @@ const Banner: React.FC = () => {
                     <strong>{currentSlide + 1} </strong> / {banners.length}
                 </p>
             </div>
-            <div className=" md:absolute px-4 container bottom-10 left-0 right-0 w-full">
+            <div className=" md:absolute md:px-0 px-4 container bottom-10 left-0 right-0 w-full">
                 <Bookingform />
             </div>
         </div>

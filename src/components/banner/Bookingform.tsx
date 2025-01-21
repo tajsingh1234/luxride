@@ -5,7 +5,7 @@ import { HiArrowUturnRight } from "react-icons/hi2";
 import './banner.css'
 const Bookingform = () => {
     return (
-        <div className='Bookingform bg-white rounded-[30px] px-4 py-7'>
+        <div className='Bookingform bg-white rounded-[30px] px-4  py-7'>
             <form action="" className='flex md:flex-row flex-col  gap-5 justify-between'>
                 <div className='Mailid flex gap-4 items-center'>
                     <div className='icon rounded-full bg-[#F6F6F6] w-[50px] h-[50px] flex items-center justify-center'>
